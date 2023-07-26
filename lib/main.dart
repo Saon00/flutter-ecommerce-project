@@ -1,3 +1,4 @@
+import 'package:demo/ui/screens/otp_screen.dart';
 import 'package:demo/ui/screens/splashscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -18,7 +19,7 @@ class _MainAppState extends State<MainApp> {
   Widget build(BuildContext context) {
     return const GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: OTPscreen(),
     );
   }
 }
