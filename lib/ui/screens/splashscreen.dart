@@ -1,7 +1,23 @@
+import 'package:demo/ui/screens/home_screen.dart';
+import 'package:demo/ui/utils/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+
+    Future.delayed(const Duration(seconds: 3))
+        .then((value) => Get.to(const HomeScreen()));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,11 +37,20 @@ class SplashScreen extends StatelessWidget {
             ),
             const Column(
               children: [
-                CircularProgressIndicator(),
-                SizedBox(
-                  height: 100,
+                CircularProgressIndicator(
+                  color: primaryColor,
                 ),
-                Text('Version 1.04')
+                // SizedBox(
+                //   height: 100,
+                // ),
+                Padding(
+                  padding: EdgeInsets.all(16.0),
+                  child: Text(
+                    'Version 1.04',
+                    style: TextStyle(
+                        color: greyColor, fontSize: 12, letterSpacing: 0.6),
+                  ),
+                )
               ],
             )
           ],
