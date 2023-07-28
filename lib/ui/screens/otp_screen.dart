@@ -45,6 +45,7 @@ class OTPscreen extends StatelessWidget {
               length: 4,
               obscureText: false,
               animationType: AnimationType.fade,
+              animationDuration: const Duration(seconds: 3),
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               keyboardType: TextInputType.number,
               pinTheme: PinTheme(
@@ -58,6 +59,19 @@ class OTPscreen extends StatelessWidget {
                 inactiveColor: primaryColor,
                 selectedColor: Colors.white,
                 selectedFillColor: Colors.white,
+              ),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+
+            //button
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(backgroundColor: primaryColor),
+                onPressed: () {},
+                child: const Text('Next'),
               ),
             ),
           ],
