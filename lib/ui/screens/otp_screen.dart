@@ -9,56 +9,58 @@ class OTPscreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.all(24.0),
-            child: Column(
-              // mainAxisAlignment: MainAxisAlignment.start,
-              // crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                // logo
-                Image.asset('assets/images/logo.png', width: 150),
-                const SizedBox(
-                  height: 30,
-                ),
-
-                // text
-                Text(
-                  'Enter OTP Code',
-                  style: GoogleFonts.ubuntu(fontSize: 30),
-                ),
-                Text(
-                  'A 4 digit OTP Code has been sent',
-                  style: GoogleFonts.ubuntu(color: Colors.grey),
-                ),
-
-                const SizedBox(
-                  height: 30,
-                ),
-
-                // otp box
-                PinCodeTextField(
-                  appContext: context,
-                  length: 4,
-                  obscureText: false,
-                  animationType: AnimationType.fade,
-                  pinTheme: PinTheme(
-                    shape: PinCodeFieldShape.box,
-                    borderRadius: BorderRadius.circular(30),
-                    fieldHeight: 50,
-                    fieldWidth: 50,
-                    activeColor: Colors.white,
-                    inactiveFillColor: Colors.white,
-                    disabledColor: Colors.white,
-                    inactiveColor: primaryColor,
-                    selectedColor: Colors.white,
-                    selectedFillColor: Colors.white,
-                  ),
-                )
-              ],
+      body: Padding(
+        padding: const EdgeInsets.all(24.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          // crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            // logo
+            Image.asset(
+              'assets/images/logo.png',
+              width: 80,
+              height: 80,
             ),
-          ),
+            const SizedBox(
+              height: 30,
+            ),
+
+            // text
+            Text(
+              'Enter OTP Code',
+              style: GoogleFonts.ubuntu(fontSize: 30),
+            ),
+            Text(
+              'A 4 digit OTP Code has been sent',
+              style: GoogleFonts.ubuntu(color: Colors.grey),
+            ),
+
+            const SizedBox(
+              height: 30,
+            ),
+
+            // otp box
+            PinCodeTextField(
+              appContext: context,
+              length: 4,
+              obscureText: false,
+              animationType: AnimationType.fade,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              keyboardType: TextInputType.number,
+              pinTheme: PinTheme(
+                shape: PinCodeFieldShape.box,
+                borderRadius: BorderRadius.circular(10),
+                fieldHeight: 45,
+                fieldWidth: 45,
+                activeColor: Colors.white,
+                inactiveFillColor: Colors.white,
+                disabledColor: Colors.white,
+                inactiveColor: primaryColor,
+                selectedColor: Colors.white,
+                selectedFillColor: Colors.white,
+              ),
+            ),
+          ],
         ),
       ),
     );
