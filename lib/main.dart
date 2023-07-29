@@ -1,6 +1,8 @@
-import 'package:demo/ui/screens/welcome_screen.dart';
+import 'package:demo/ui/screens/complete_profile_screen.dart';
+import 'package:demo/ui/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MainApp());
@@ -16,9 +18,17 @@ class MainApp extends StatefulWidget {
 class _MainAppState extends State<MainApp> {
   @override
   Widget build(BuildContext context) {
-    return const GetMaterialApp(
+    return GetMaterialApp(
+      theme: ThemeData(
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: primaryColor,
+            textStyle: GoogleFonts.ubuntu(),
+          ),
+        ),
+      ),
       debugShowCheckedModeBanner: false,
-      home: WelcomeBack(),
+      home: const CompleteProfileScreen(),
     );
   }
 }

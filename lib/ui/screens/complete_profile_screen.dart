@@ -4,8 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 import '../utils/app_colors.dart';
 import '../utils/common_text_field.dart';
 
-class WelcomeBackScreen extends StatelessWidget {
-  const WelcomeBackScreen({super.key});
+class CompleteProfileScreen extends StatelessWidget {
+  const CompleteProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,34 +27,72 @@ class WelcomeBackScreen extends StatelessWidget {
               ),
               // text
               Text(
-                'Welcome Back',
+                'Complete Profile',
                 style: GoogleFonts.ubuntu(fontSize: 30),
               ),
               const SizedBox(
                 height: 10,
               ),
               Text(
-                'Please enter your Email address',
+                'Get started with your details',
                 style: GoogleFonts.ubuntu(color: greyColor),
               ),
               const SizedBox(
                 height: 20,
               ),
 
-              // text field
+              // first name
               CommonTextField(
-                hintText: 'Email Address ',
+                hintText: 'First Name',
                 textEditingController: TextEditingController(),
+              ),
+              const SizedBox(
+                height: 5,
+              ),
+
+              // last name
+              CommonTextField(
+                hintText: 'Last Name',
+                textEditingController: TextEditingController(),
+              ),
+              const SizedBox(
+                height: 5,
+              ),
+
+              // mobile number
+              CommonTextField(
+                hintText: 'Mobile',
+                textEditingController: TextEditingController(),
+              ),
+              const SizedBox(
+                height: 5,
+              ),
+
+              // city
+              CommonTextField(
+                hintText: 'city',
+                textEditingController: TextEditingController(),
+              ),
+              const SizedBox(
+                height: 5,
+              ),
+
+              // shipping address
+              CommonTextField(
+                hintText: 'Shipping Address',
+                textEditingController: TextEditingController(),
+                maxlines: 3,
               ),
               const SizedBox(
                 height: 20,
               ),
+
               // button
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {},
-                  child: const Text('Next'),
+                  child: const Text('Complete'),
                 ),
               ),
             ],

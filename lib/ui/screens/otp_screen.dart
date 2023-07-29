@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
-import '../utils/common_elevated_button.dart';
-
 class OTPscreen extends StatelessWidget {
   const OTPscreen({super.key});
 
@@ -75,9 +73,12 @@ class OTPscreen extends StatelessWidget {
             ),
 
             //button
-            CommonElevatedButton(
-              onTap: () {},
-              title: 'Next',
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {},
+                child: const Text('Next'),
+              ),
             ),
             const SizedBox(
               height: 30,
