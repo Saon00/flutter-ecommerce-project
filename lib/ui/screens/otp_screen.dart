@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
+import '../utils/common_elevated_button.dart';
+
 class OTPscreen extends StatelessWidget {
   const OTPscreen({super.key});
 
@@ -32,7 +34,7 @@ class OTPscreen extends StatelessWidget {
             ),
             Text(
               'A 4 digit OTP Code has been sent',
-              style: GoogleFonts.ubuntu(color: Colors.grey),
+              style: GoogleFonts.ubuntu(color: greyColor),
             ),
 
             const SizedBox(
@@ -45,7 +47,7 @@ class OTPscreen extends StatelessWidget {
               length: 4,
               obscureText: false,
               animationType: AnimationType.fade,
-              animationDuration: const Duration(seconds: 3),
+              // animationDuration: const Duration(seconds: 3),
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               keyboardType: TextInputType.number,
               pinTheme: PinTheme(
@@ -53,27 +55,53 @@ class OTPscreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
                 fieldHeight: 45,
                 fieldWidth: 45,
-                activeColor: Colors.white,
+                activeFillColor: primaryColor,
+                activeColor: primaryColor,
                 inactiveFillColor: Colors.white,
                 disabledColor: Colors.white,
                 inactiveColor: primaryColor,
-                selectedColor: Colors.white,
+                selectedColor: Colors.black,
                 selectedFillColor: Colors.white,
               ),
+              enableActiveFill: true,
+              onCompleted: (v) {},
+              onChanged: (value) {},
             ),
             const SizedBox(
               height: 30,
             ),
 
             //button
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(backgroundColor: primaryColor),
-                onPressed: () {},
-                child: const Text('Next'),
-              ),
+            CommonElevatedButton(
+              onTap: () {},
+              title: 'Next',
             ),
+            const SizedBox(
+              height: 30,
+            ),
+
+            // text
+            RichText(
+              text: const TextSpan(
+                  text: 'This code will expire in ',
+                  style: TextStyle(fontSize: 13, color: greyColor),
+                  children: [
+                    TextSpan(
+                        text: '120s',
+                        style: TextStyle(
+                            fontSize: 13,
+                            color: primaryColor,
+                            fontWeight: FontWeight.bold))
+                  ]),
+            ),
+
+            // text button
+            TextButton(
+                onPressed: () {},
+                child: Text(
+                  'Resend Code',
+                  style: GoogleFonts.ubuntu(color: greyColor.withOpacity(.9)),
+                ))
           ],
         ),
       ),

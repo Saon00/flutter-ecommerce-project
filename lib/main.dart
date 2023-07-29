@@ -1,5 +1,4 @@
 import 'package:demo/ui/screens/otp_screen.dart';
-import 'package:demo/ui/screens/splashscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
