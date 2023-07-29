@@ -30,7 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
             Expanded(
               child: Center(
                 child: Image.asset(
-                  'assets/images/logo.png',
+                  logoimgPath,
                   width: 100,
                 ),
               ),

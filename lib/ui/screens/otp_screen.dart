@@ -19,7 +19,7 @@ class OTPscreen extends StatelessWidget {
           children: [
             // logo
             Image.asset(
-              'assets/images/logo.png',
+              logoimgPath,
               width: 80,
               height: 80,
             ),
@@ -31,6 +31,9 @@ class OTPscreen extends StatelessWidget {
             Text(
               'Enter OTP Code',
               style: GoogleFonts.ubuntu(fontSize: 30),
+            ),
+            const SizedBox(
+              height: 10,
             ),
             Text(
               'A 4 digit OTP Code has been sent',
