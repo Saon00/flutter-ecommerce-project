@@ -20,6 +20,9 @@ class _MainAppState extends State<MainApp> {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       theme: ThemeData(
+        scaffoldBackgroundColor: Colors.white,
+        appBarTheme:
+            const AppBarTheme(backgroundColor: Colors.white, elevation: .5),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
             backgroundColor: primaryColor,
