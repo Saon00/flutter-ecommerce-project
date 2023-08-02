@@ -1,4 +1,4 @@
-import 'package:demo/ui/screens/bottom_nav_screen.dart';
+import 'package:demo/ui/screens/splashscreen.dart';
 import 'package:demo/ui/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -31,7 +31,7 @@ class _MainAppState extends State<MainApp> {
         ),
       ),
       debugShowCheckedModeBanner: false,
-      home: const BottomNavScreen(),
+      home: const SplashScreen(),
     );
   }
 }

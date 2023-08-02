@@ -1,4 +1,4 @@
-import 'package:demo/ui/screens/home_screen.dart';
+import 'package:demo/ui/screens/bottom_nav_screen.dart';
 import 'package:demo/ui/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -16,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
 
     Future.delayed(const Duration(seconds: 3))
-        .then((value) => Get.to(const HomeScreen()));
+        .then((value) => Get.off(const BottomNavScreen()));
   }
 
   @override
