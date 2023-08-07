@@ -13,10 +13,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  // final CarouselController _carouselController = CarouselController();
-
-  // reactive notifier
-  final ValueNotifier<int> _valueNotifier = ValueNotifier(0);
+ 
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
             const SizedBox(height: 10),
             // slider
-            CarouselSliderWidget(valueNotifier: _valueNotifier),
+            CarouselSliderWidget(),
           ],
         ),
       ),

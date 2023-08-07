@@ -3,12 +3,18 @@ import 'package:demo/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class CarouselSliderWidget extends StatelessWidget {
-  const CarouselSliderWidget({
-    super.key,
-    required ValueNotifier<int> valueNotifier,
-  }) : _valueNotifier = valueNotifier;
+  // const CarouselSliderWidget({
+  //   super.key,
+  //   required ValueNotifier<int> valueNotifier,
+  // }) : _valueNotifier = valueNotifier;
 
-  final ValueNotifier<int> _valueNotifier;
+  // final ValueNotifier<int> _valueNotifier;
+
+  // final CarouselController _carouselController = CarouselController();
+  // reactive notifier
+  final ValueNotifier<int> _valueNotifier = ValueNotifier(0);
+
+  CarouselSliderWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
