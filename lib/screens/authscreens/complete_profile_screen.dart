@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../utils/app_colors.dart';
-import '../utils/common_text_field.dart';
+import '../../utils/app_colors.dart';
+import '../../utils/common_text_field.dart';
 
 class CompleteProfileScreen extends StatelessWidget {
   const CompleteProfileScreen({super.key});
