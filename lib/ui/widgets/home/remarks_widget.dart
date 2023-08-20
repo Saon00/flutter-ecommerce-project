@@ -1,5 +1,5 @@
-import 'package:demo/utils/app_colors.dart';
-import 'package:demo/utils/text_style.dart';
+import 'package:demo/ui/utils/app_colors.dart';
+import 'package:demo/ui/utils/text_style.dart';
 import 'package:flutter/material.dart';
 
 class RemarkWidget extends StatelessWidget {

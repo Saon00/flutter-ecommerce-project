@@ -1,8 +1,8 @@
-import 'package:demo/screens/cart_screen.dart';
-import 'package:demo/screens/categories_screen.dart';
-import 'package:demo/screens/homescreens/home_screen.dart';
-import 'package:demo/screens/wishlist_screeen.dart';
-import 'package:demo/utils/app_colors.dart';
+import 'package:demo/ui/screens/homescreens/cart_screen.dart';
+import 'package:demo/ui/screens/homescreens/categories_screen.dart';
+import 'package:demo/ui/screens/homescreens/home_screen.dart';
+import 'package:demo/ui/screens/homescreens/wishlist_screeen.dart';
+import 'package:demo/ui/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavScreen extends StatefulWidget {

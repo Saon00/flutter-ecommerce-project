@@ -1,10 +1,11 @@
-import 'package:demo/utils/app_colors.dart';
+import 'package:demo/ui/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 
-import '../../utils/appbar_icon_button.dart';
-import 'carousel_slider.dart';
-import 'remarks_widget.dart';
-import 'search_textfield.dart';
+import '../../widgets/category_card_widget.dart';
+import '../../widgets/home/appbar_icon_button.dart';
+import '../../widgets/home/carousel_slider.dart';
+import '../../widgets/home/remarks_widget.dart';
+import '../../widgets/home/search_textfield.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -65,9 +66,39 @@ class _HomeScreenState extends State<HomeScreen> {
               remarksName: 'All Categories',
               seeAllTap: () {},
             ),
+
+            // categories names
+
+            const SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  CategoryCard(
+                    categoryName: 'Computer',
+                  ),
+                  CategoryCard(
+                    categoryName: 'Computer',
+                  ),
+                  CategoryCard(
+                    categoryName: 'Computer',
+                  ),
+                  CategoryCard(
+                    categoryName: 'Computer',
+                  ),
+                  CategoryCard(
+                    categoryName: 'Computer',
+                  ),
+                  CategoryCard(
+                    categoryName: 'Computer',
+                  ),
+                ],
+              ),
+            )
           ],
         ),
       ),
     );
   }
 }
+
+

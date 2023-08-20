@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../utils/app_colors.dart';
-import '../utils/common_text_field.dart';
+import '../widgets/home/common_text_field.dart';
 
 class WelcomeBackScreen extends StatelessWidget {
   const WelcomeBackScreen({super.key});

@@ -1,5 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:demo/utils/app_colors.dart';
+import 'package:demo/ui/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class CarouselSliderWidget extends StatelessWidget {
