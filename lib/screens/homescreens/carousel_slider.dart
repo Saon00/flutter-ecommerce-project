@@ -33,7 +33,7 @@ class CarouselSliderWidget extends StatelessWidget {
               builder: (BuildContext context) {
                 return Container(
                   width: MediaQuery.of(context).size.width,
-                  margin: const EdgeInsets.symmetric(horizontal: 5.0),
+                  margin: const EdgeInsets.symmetric(horizontal: 2.0),
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                       color: Colors.amber,
@@ -59,8 +59,8 @@ class CarouselSliderWidget extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.all(2.0),
                     child: Container(
-                      height: 10,
-                      width: 10,
+                      height: 12,
+                      width: 12,
                       decoration: BoxDecoration(
                           color: value == i ? primaryColor : null,
                           border: Border.all(color: Colors.grey),

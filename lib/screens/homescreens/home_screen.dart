@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../utils/appbar_icon_button.dart';
 import 'carousel_slider.dart';
+import 'remarks_widget.dart';
 import 'search_textfield.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -13,8 +14,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
- 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,13 +50,21 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Padding(
         padding: const EdgeInsets.all(18.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Search bar
             const SearchTextField(),
-
             const SizedBox(height: 10),
+
             // slider
             CarouselSliderWidget(),
+            const SizedBox(height: 6),
+
+            // categories
+            RemarkWidget(
+              remarksName: 'All Categories',
+              seeAllTap: () {},
+            ),
           ],
         ),
       ),
