@@ -1,5 +1,6 @@
 import 'package:demo/ui/screens/onboarding/splashscreen.dart';
 import 'package:demo/ui/utils/app_colors.dart';
+import 'package:demo/ui/utils/text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -21,8 +22,10 @@ class _MainAppState extends State<MainApp> {
     return GetMaterialApp(
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
-        appBarTheme:
-            const AppBarTheme(backgroundColor: Colors.white, elevation: .5),
+        appBarTheme: AppBarTheme(
+            backgroundColor: Colors.white,
+            elevation: .5,
+            titleTextStyle: appbarTitleStyle),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
             backgroundColor: primaryColor,

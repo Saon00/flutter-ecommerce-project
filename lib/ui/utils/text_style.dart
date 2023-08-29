@@ -24,4 +24,13 @@ TextStyle popularItemSubTitleStyle = GoogleFonts.poppins(
   // letterSpacing: .6,
 );
 
-TextStyle ratingStyle = GoogleFonts.poppins(color: greyColor, fontSize: 12);
+TextStyle ratingStyle = GoogleFonts.poppins(
+  color: greyColor,
+  fontSize: 12,
+);
+
+TextStyle appbarTitleStyle = GoogleFonts.poppins(
+  color: blackColor,
+  fontWeight: FontWeight.w500,
+  fontSize: 18,
+);
