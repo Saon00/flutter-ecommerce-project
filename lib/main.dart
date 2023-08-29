@@ -1,4 +1,5 @@
 import 'package:demo/ui/screens/onboarding/splashscreen.dart';
+import 'package:demo/ui/state_management/bottom_navbar_controller.dart';
 import 'package:demo/ui/utils/app_colors.dart';
 import 'package:demo/ui/utils/text_style.dart';
 import 'package:flutter/material.dart';
@@ -20,6 +21,7 @@ class _MainAppState extends State<MainApp> {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      initialBinding: GetXBindings(),
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
         appBarTheme: AppBarTheme(
@@ -36,5 +38,14 @@ class _MainAppState extends State<MainApp> {
       debugShowCheckedModeBanner: false,
       home: const SplashScreen(),
     );
+  }
+}
+
+// binders
+class GetXBindings extends Bindings {
+  @override
+  void dependencies() {
+    // Get.create<BottomNavBarController>(() => BottomNavBarController());
+    Get.put(BottomNavBarController());
   }
 }

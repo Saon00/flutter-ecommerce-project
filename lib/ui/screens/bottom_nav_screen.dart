@@ -15,8 +15,8 @@ class BottomNavScreen extends StatefulWidget {
 }
 
 class _BottomNavScreenState extends State<BottomNavScreen> {
-  final BottomNavBarController _navBarController =
-      Get.put(BottomNavBarController());
+  // final BottomNavBarController _navBarController =
+  //     Get.put(BottomNavBarController());
 
   final List<Widget> _screen = [
     const HomeScreen(),

@@ -1,4 +1,4 @@
-import 'package:demo/ui/screens/homescreens/home_screen.dart';
+import 'package:demo/ui/state_management/bottom_navbar_controller.dart';
 import 'package:demo/ui/utils/app_colors.dart';
 import 'package:demo/ui/widgets/category_card_widget.dart';
 import 'package:flutter/material.dart';
@@ -19,9 +19,11 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
         title: const Text('Categories'),
         leading: IconButton(
           onPressed: () {
-            setState(() {
-              Get.offAll(const HomeScreen());
-            });
+            // getx binding
+            Get.find<BottomNavBarController>().backToHome();
+            // final BottomNavBarController navBarController =
+            //     Get.put(BottomNavBarController());
+            // navBarController.backToHome();
           },
           icon: Icon(
             Icons.arrow_back_ios_new,
