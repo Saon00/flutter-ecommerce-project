@@ -11,3 +11,17 @@ TextStyle subTitileStyle = GoogleFonts.poppins(
   color: greyColor,
   letterSpacing: .6,
 );
+
+TextStyle popularItemTitleStyle = GoogleFonts.poppins(
+  color: blackColor.withOpacity(0.4),
+  fontWeight: FontWeight.w500,
+  letterSpacing: .6,
+);
+
+TextStyle popularItemSubTitleStyle = GoogleFonts.poppins(
+  color: primaryColor,
+  fontWeight: FontWeight.w500,
+  // letterSpacing: .6,
+);
+
+TextStyle ratingStyle = GoogleFonts.poppins(color: greyColor, fontSize: 12);
