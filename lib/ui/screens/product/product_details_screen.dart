@@ -50,7 +50,6 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                         style: titileStyle.copyWith(fontSize: 18),
                       ),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Wrap(
                             crossAxisAlignment: WrapCrossAlignment.center,
