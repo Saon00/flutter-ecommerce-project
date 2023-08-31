@@ -1,4 +1,4 @@
-import 'package:demo/ui/screens/bottom_nav_screen.dart';
+import 'package:demo/ui/screens/homescreens/bottom_nav_screen.dart';
 import 'package:demo/ui/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
