@@ -1,4 +1,5 @@
 import 'package:demo/ui/screens/homescreens/categories_screen.dart';
+import 'package:demo/ui/state_management/bottom_navbar_controller.dart';
 import 'package:demo/ui/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -70,7 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
               RemarkWidget(
                 remarksName: 'All Categories',
                 seeAllTap: () {
-                  Get.to(() => const CategoriesScreen());
+                  Get.find<BottomNavBarController>().changeIndex(1);
                 },
               ),
 
@@ -107,7 +108,7 @@ class _HomeScreenState extends State<HomeScreen> {
               RemarkWidget(
                 remarksName: 'Popular Items',
                 seeAllTap: () {
-                  Get.to(() => const CategoriesScreen());
+                  // Get.to(() => const CategoriesScreen());
                 },
               ),
               const SizedBox(height: 6),
