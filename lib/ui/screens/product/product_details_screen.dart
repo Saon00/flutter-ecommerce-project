@@ -3,7 +3,6 @@ import 'package:demo/ui/utils/app_colors.dart';
 import 'package:demo/ui/utils/text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:numberpicker/numberpicker.dart';
 
 class ProductDetailsScreen extends StatefulWidget {
   const ProductDetailsScreen({super.key});
@@ -14,6 +13,13 @@ class ProductDetailsScreen extends StatefulWidget {
 
 class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
   var _currentValue = 0;
+  late TextEditingController _stepperController;
+
+  @override
+  void initState() {
+    super.initState();
+    _stepperController = TextEditingController(text: '1');
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -100,13 +106,56 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                     ],
                   ),
                 ),
-                NumberPicker(
+                Wrap(
+                  children: [
+                    // minus
+                    ElevatedButton(
+                      onPressed: () {
+                        if (_currentValue > 1) {
+                          _currentValue--;
+                          _stepperController.text = _currentValue.toString();
+                        }
+                      },
+                      child: const Icon(
+                        Icons.remove,
+                      ),
+                    ),
+
+                    // numbers
+                    SizedBox(
+                      width: 50,
+                      child: TextField(
+                        textAlign: TextAlign.center,
+                        controller: _stepperController,
+                        style: appbarTitleStyle,
+                        enabled: false,
+                        decoration: const InputDecoration(
+                            border: OutlineInputBorder(
+                                borderSide: BorderSide.none)),
+                      ),
+                    ),
+
+                    // add
+                    ElevatedButton(
+                      onPressed: () {
+                        if (_currentValue < 20) {
+                          _currentValue++;
+                          _stepperController.text = _currentValue.toString();
+                        }
+                      },
+                      child: const Icon(Icons.add),
+                    ),
+                  ],
+                )
+                /*
+                NumberPicker(                  
                   itemHeight: 35,
                   value: _currentValue,
                   minValue: 0,
                   maxValue: 100,
                   onChanged: (value) => setState(() => _currentValue = value),
                 ),
+                */
               ],
             ),
           ],
