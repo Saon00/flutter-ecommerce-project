@@ -4,12 +4,12 @@ import 'package:demo/ui/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../widgets/category_card_widget.dart';
 import '../../widgets/home/appbar_icon_button.dart';
 import '../../widgets/home/carousel_slider.dart';
 import '../../widgets/home/remarks_widget.dart';
 import '../../widgets/home/search_textfield.dart';
-import '../../widgets/product_card.dart';
+import '../../widgets/others/category_card_widget.dart';
+import '../../widgets/others/product_card.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

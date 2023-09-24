@@ -4,8 +4,8 @@ import 'package:demo/ui/utils/text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../widgets/common_elevated_button.dart';
-import '../../widgets/product_stepper.dart';
+import '../../widgets/others/common_elevated_button.dart';
+import '../../widgets/others/product_stepper.dart';
 
 class ProductDetailsScreen extends StatefulWidget {
   const ProductDetailsScreen({super.key});

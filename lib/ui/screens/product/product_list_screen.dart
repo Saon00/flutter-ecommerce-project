@@ -1,7 +1,8 @@
 import 'package:demo/ui/utils/app_colors.dart';
-import 'package:demo/ui/widgets/product_card.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../widgets/others/product_card.dart';
 
 class ProductListScreen extends StatelessWidget {
   const ProductListScreen({super.key});

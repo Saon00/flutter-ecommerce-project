@@ -2,7 +2,7 @@ import 'package:demo/ui/screens/product/product_list_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../utils/app_colors.dart';
+import '../../utils/app_colors.dart';
 
 class CategoryCard extends StatelessWidget {
   final String categoryName;

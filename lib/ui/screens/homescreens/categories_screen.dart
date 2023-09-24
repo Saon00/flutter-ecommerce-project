@@ -1,8 +1,9 @@
 import 'package:demo/ui/state_management/bottom_navbar_controller.dart';
 import 'package:demo/ui/utils/app_colors.dart';
-import 'package:demo/ui/widgets/category_card_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../widgets/others/category_card_widget.dart';
 
 class CategoriesScreen extends StatefulWidget {
   const CategoriesScreen({super.key});
