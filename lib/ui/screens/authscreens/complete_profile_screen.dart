@@ -43,6 +43,7 @@ class CompleteProfileScreen extends StatelessWidget {
 
               // first name
               CommonTextField(
+                validator: (String? value) {},
                 hintText: 'First Name',
                 textEditingController: TextEditingController(),
               ),
@@ -52,6 +53,7 @@ class CompleteProfileScreen extends StatelessWidget {
 
               // last name
               CommonTextField(
+                validator: (String? value) {},
                 hintText: 'Last Name',
                 textEditingController: TextEditingController(),
               ),
@@ -61,6 +63,7 @@ class CompleteProfileScreen extends StatelessWidget {
 
               // mobile number
               CommonTextField(
+                validator: (String? value) {},
                 hintText: 'Mobile',
                 textEditingController: TextEditingController(),
               ),
@@ -70,6 +73,7 @@ class CompleteProfileScreen extends StatelessWidget {
 
               // city
               CommonTextField(
+                validator: (String? value) {},
                 hintText: 'city',
                 textEditingController: TextEditingController(),
               ),
@@ -79,6 +83,7 @@ class CompleteProfileScreen extends StatelessWidget {
 
               // shipping address
               CommonTextField(
+                validator: (String? value) {},
                 hintText: 'Shipping Address',
                 textEditingController: TextEditingController(),
                 maxlines: 3,

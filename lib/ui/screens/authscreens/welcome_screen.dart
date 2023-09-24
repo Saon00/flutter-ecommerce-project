@@ -55,6 +55,9 @@ class _WelcomeBackScreenState extends State<WelcomeBackScreen> {
                 CommonTextField(
                   hintText: 'Email Address ',
                   textEditingController: _emailETController,
+                  validator: (String? value) {
+                    
+                  },
                 ),
                 const SizedBox(
                   height: 20,
@@ -72,8 +75,10 @@ class _WelcomeBackScreenState extends State<WelcomeBackScreen> {
                             if (response) {
                               Get.to(() => const OTPscreen());
                             } else {
-                              Get.snackbar('Login Failed', 'Try again',
-                                  backgroundColor: Colors.red);
+                              if (mounted) {
+                                Get.snackbar('Login Failed', 'Try again',
+                                    backgroundColor: Colors.red);
+                              }
                             }
                           },
                           child: const Text('Next'),
