@@ -34,6 +34,7 @@ class _ProductStepperState extends State<ProductStepper> {
             textAlign: TextAlign.center,
             controller: _stepperController,
             style: appbarTitleStyle,
+            // to use text field
             enabled: false,
             decoration: const InputDecoration(
                 border: OutlineInputBorder(borderSide: BorderSide.none)),
