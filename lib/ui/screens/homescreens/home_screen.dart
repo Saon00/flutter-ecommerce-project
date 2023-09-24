@@ -1,4 +1,5 @@
 import 'package:demo/ui/screens/homescreens/categories_screen.dart';
+import 'package:demo/ui/screens/authscreens/welcome_screen.dart';
 import 'package:demo/ui/state_management/bottom_navbar_controller.dart';
 import 'package:demo/ui/utils/app_colors.dart';
 import 'package:flutter/material.dart';
@@ -29,7 +30,9 @@ class _HomeScreenState extends State<HomeScreen> {
             Image.asset(navLogoimgPath),
             const Spacer(),
             AppBarIcon(
-              callback: () {},
+              callback: () {
+                Get.to(() => const WelcomeBackScreen());
+              },
               iconData: Icons.person_2_outlined,
             ),
             const SizedBox(

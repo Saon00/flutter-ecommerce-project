@@ -7,7 +7,7 @@ import 'package:http/http.dart';
 
 class NetworkCaller {
   // singleton -> if i don't want
-  //to make instance of this class
+  // to make instance of this class
   NetworkCaller._();
 
   // by using ResponseModel class
