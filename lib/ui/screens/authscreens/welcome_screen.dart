@@ -82,12 +82,18 @@ class _WelcomeBackScreenState extends State<WelcomeBackScreen> {
                                 final bool response = await authController
                                     .emailVerification(_emailETController.text);
                                 if (response) {
-                                  Get.to(() => const OTPscreen());
+                                  Get.to(() => OTPscreen(
+                                        email: _emailETController.text,
+                                      ));
                                 } else {
-                                  if (mounted) {
-                                    Get.snackbar('Login Failed', 'Try again',
-                                        backgroundColor: Colors.red);
-                                  }
+                                  // when you're using getx you don't have to use context
+                                  // so you don't need to use if(mounted)
+                                  // if (mounted) {
+                                  //   Get.snackbar('Login Failed', 'Try again',
+                                  //       backgroundColor: Colors.red);
+                                  // }
+                                  Get.snackbar('Login Failed', 'Try again',
+                                      backgroundColor: Colors.red);
                                 }
                               }
                             },
