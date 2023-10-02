@@ -1,4 +1,5 @@
 import 'package:demo/data/services/network_caller.dart';
+import 'package:demo/ui/state_management/auth_controller.dart';
 import 'package:get/get.dart';
 
 class UserAuthController extends GetxController {
@@ -31,6 +32,8 @@ class UserAuthController extends GetxController {
         await NetworkCaller.getRequest(url: '/VerifyLogin/$email/$otp');
     _otpVerificationProgress = false;
     if (response.isSuccess) {
+      // 'data' from postman
+      await Get.find<AuthController>().saveToken(response.returndata['data']);
       update();
       return true;
     } else {

@@ -1,4 +1,6 @@
+import 'package:demo/ui/screens/authscreens/welcome_screen.dart';
 import 'package:demo/ui/screens/homescreens/bottom_nav_screen.dart';
+import 'package:demo/ui/state_management/auth_controller.dart';
 import 'package:demo/ui/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -15,8 +17,20 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
 
-    Future.delayed(const Duration(seconds: 3))
-        .then((value) => Get.off(const BottomNavScreen()));
+    Future.delayed(const Duration(seconds: 1)).then((value) async {
+      final bool loginState = await Get.find<AuthController>().isLoggedIn();
+      // used for debugging
+      // log(loginState.toString());
+      if (loginState) {
+        Get.off(const BottomNavScreen());
+      } else {
+        Get.off(const WelcomeBackScreen());
+      }
+
+      // loginState
+      //     ? Get.off(const BottomNavScreen())
+      //     : Get.off(const WelcomeBackScreen());
+    });
   }
 
   @override
