@@ -103,7 +103,7 @@ class _OTPscreenState extends State<OTPscreen> {
                                     widget.email, _otpcontroller.text);
 
                             if (response) {
-                              Get.to(() => const HomeScreen());
+                              Get.offAll(() => const HomeScreen());
                             } else {
                               Get.snackbar(
                                   'OTP Verification Failed', 'Try again',

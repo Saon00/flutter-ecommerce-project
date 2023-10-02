@@ -1,5 +1,7 @@
 import 'package:demo/ui/screens/homescreens/categories_screen.dart';
 import 'package:demo/ui/screens/authscreens/welcome_screen.dart';
+import 'package:demo/ui/screens/homescreens/profile_screen.dart';
+import 'package:demo/ui/state_management/auth_controller.dart';
 import 'package:demo/ui/state_management/bottom_navbar_controller.dart';
 import 'package:demo/ui/utils/app_colors.dart';
 import 'package:flutter/material.dart';
@@ -31,7 +33,13 @@ class _HomeScreenState extends State<HomeScreen> {
             const Spacer(),
             AppBarIcon(
               callback: () {
-                Get.to(() => const WelcomeBackScreen());
+                Get.find<AuthController>().isLoggedIn().then((value) {
+                  if (value) {
+                    Get.to(() => const ProfileScreen());
+                  } else {
+                    Get.to(() => const WelcomeBackScreen());
+                  }
+                });
               },
               iconData: Icons.person_2_outlined,
             ),
