@@ -6,9 +6,11 @@ import '../../utils/app_colors.dart';
 
 class CategoryCard extends StatelessWidget {
   final String categoryName;
+  final String imgpath;
   const CategoryCard({
     super.key,
     required this.categoryName,
+    required this.imgpath,
   });
 
   @override
@@ -26,11 +28,13 @@ class CategoryCard extends StatelessWidget {
               decoration: BoxDecoration(
                   color: primaryColor.withOpacity(.10),
                   borderRadius: BorderRadius.circular(5)),
-              child: const Padding(
-                padding: EdgeInsets.all(15),
-                child: Icon(
-                  Icons.computer_rounded,
-                  color: primaryColor,
+              child: Padding(
+                padding: const EdgeInsets.all(8),
+                child: Image.network(
+                  imgpath,
+                  height: 50,
+                  width: 50,
+                  fit: BoxFit.scaleDown,
                 ),
               ),
             ),

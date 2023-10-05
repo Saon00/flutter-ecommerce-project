@@ -1,4 +1,5 @@
 import 'package:demo/ui/state_management/bottom_navbar_controller.dart';
+import 'package:demo/ui/state_management/category_controller.dart';
 import 'package:demo/ui/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -34,14 +35,35 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: GridView.builder(
-            itemCount: 30,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 4,
-            ),
-            itemBuilder: (context, index) {
-              return const CategoryCard(categoryName: 'Dummy');
-            }),
+        child: GetBuilder<CategoryController>(builder: (category) {
+          if (category.getCategoryInProgress) {
+            return const Center(
+              child: CircularProgressIndicator(
+                color: primaryColor,
+              ),
+            );
+          }
+
+          // refresh the page & call api
+          return RefreshIndicator(
+            color: primaryColor,
+            onRefresh: () async {
+              Get.find<CategoryController>().getCategories();
+            },
+            child: GridView.builder(
+                itemCount: category.categoryModel.categoryData?.length ?? 0,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 4,
+                ),
+                itemBuilder: (context, index) {
+                  final catIndex = category.categoryModel.categoryData![index];
+                  return CategoryCard(
+                    categoryName: catIndex.categoryName.toString(),
+                    imgpath: catIndex.categoryImg.toString(),
+                  );
+                }),
+          );
+        }),
       ),
     );
   }

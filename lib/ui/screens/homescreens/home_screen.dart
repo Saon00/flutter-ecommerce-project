@@ -6,6 +6,7 @@ import 'package:demo/ui/state_management/bottom_navbar_controller.dart';
 import 'package:demo/ui/state_management/category_controller.dart';
 import 'package:demo/ui/state_management/home_controller.dart';
 import 'package:demo/ui/utils/app_colors.dart';
+import 'package:demo/ui/widgets/others/category_card_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -13,7 +14,6 @@ import '../../widgets/home/appbar_icon_button.dart';
 import '../../widgets/home/carousel_slider.dart';
 import '../../widgets/home/remarks_widget.dart';
 import '../../widgets/home/search_textfield.dart';
-import '../../widgets/others/category_card_widget.dart';
 import '../../widgets/others/product_card.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -111,29 +111,17 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   );
                 }
-                return const SingleChildScrollView(
+                return SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
-                    children: [
-                      CategoryCard(
-                        categoryName: 'Computer',
-                      ),
-                      CategoryCard(
-                        categoryName: 'Computer',
-                      ),
-                      CategoryCard(
-                        categoryName: 'Computer',
-                      ),
-                      CategoryCard(
-                        categoryName: 'Computer',
-                      ),
-                      CategoryCard(
-                        categoryName: 'Computer',
-                      ),
-                      CategoryCard(
-                        categoryName: 'Computer',
-                      ),
-                    ],
+                    children: categoryController.categoryModel.categoryData!
+                        .map(
+                          (e) => CategoryCard(
+                            categoryName: e.categoryName.toString(),
+                            imgpath: e.categoryImg.toString(),
+                          ),
+                        )
+                        .toList(),
                   ),
                 );
               }),
