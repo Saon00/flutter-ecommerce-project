@@ -1,6 +1,7 @@
 import 'package:demo/ui/screens/onboarding/splashscreen.dart';
 import 'package:demo/ui/state_management/auth_controller.dart';
 import 'package:demo/ui/state_management/bottom_navbar_controller.dart';
+import 'package:demo/ui/state_management/home_controller.dart';
 import 'package:demo/ui/state_management/user_auth_controller.dart';
 import 'package:demo/ui/state_management/user_profile_controller.dart';
 import 'package:demo/ui/utils/app_colors.dart';
@@ -53,5 +54,6 @@ class GetXBindings extends Bindings {
     Get.put(UserAuthController());
     Get.put(AuthController());
     Get.put(UserProfileContoller());
+    Get.put(HomeController());
   }
 }
