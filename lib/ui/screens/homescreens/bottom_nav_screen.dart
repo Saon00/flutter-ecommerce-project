@@ -3,6 +3,7 @@ import 'package:demo/ui/screens/homescreens/categories_screen.dart';
 import 'package:demo/ui/screens/homescreens/home_screen.dart';
 import 'package:demo/ui/screens/homescreens/wishlist_screeen.dart';
 import 'package:demo/ui/state_management/bottom_navbar_controller.dart';
+import 'package:demo/ui/state_management/category_controller.dart';
 import 'package:demo/ui/state_management/home_controller.dart';
 import 'package:demo/ui/utils/app_colors.dart';
 import 'package:flutter/material.dart';
@@ -31,6 +32,7 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
   void initState() {
     super.initState();
     Get.find<HomeController>().getHomeSlider();
+    Get.find<CategoryController>().getCategories();
   }
 
   @override

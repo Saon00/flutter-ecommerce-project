@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'package:demo/data/models/response_model.dart';
 import 'package:demo/data/utils/urls.dart';
 import 'package:demo/ui/state_management/auth_controller.dart';
-import 'package:flutter/material.dart';
 
 import 'package:http/http.dart';
 
@@ -42,7 +41,7 @@ class NetworkCaller {
             returndata: jsonDecode(response.body));
       }
     } catch (e) {
-      debugPrint(e.toString());
+      // debugPrint(e.toString());
       return ResponseModel(
           isSuccess: false, statusCode: -1, returndata: e.toString());
     }

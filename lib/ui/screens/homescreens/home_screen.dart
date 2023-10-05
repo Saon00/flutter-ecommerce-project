@@ -3,6 +3,7 @@ import 'package:demo/ui/screens/authscreens/welcome_screen.dart';
 import 'package:demo/ui/screens/homescreens/profile_screen.dart';
 import 'package:demo/ui/state_management/auth_controller.dart';
 import 'package:demo/ui/state_management/bottom_navbar_controller.dart';
+import 'package:demo/ui/state_management/category_controller.dart';
 import 'package:demo/ui/state_management/home_controller.dart';
 import 'package:demo/ui/utils/app_colors.dart';
 import 'package:flutter/material.dart';
@@ -79,14 +80,15 @@ class _HomeScreenState extends State<HomeScreen> {
               GetBuilder<HomeController>(builder: (homeContoller) {
                 if (homeContoller.getSliderInProgress) {
                   return const SizedBox(
-                    height: 150 ,
+                    height: 150,
                     child: Center(
                         child: CircularProgressIndicator(
                       color: primaryColor,
                     )),
                   );
                 } else {
-                  return CarouselSliderWidget(homeSliderModel: homeContoller.homeSliderModel);
+                  return CarouselSliderWidget(
+                      homeSliderModel: homeContoller.homeSliderModel);
                 }
               }),
               const SizedBox(height: 6),
@@ -100,32 +102,41 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
 
               // categories names
-
-              const SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    CategoryCard(
-                      categoryName: 'Computer',
+              GetBuilder<CategoryController>(builder: (categoryController) {
+                if (categoryController.getCategoryInProgress) {
+                  return const SizedBox(
+                    height: 100,
+                    child: Center(
+                      child: CircularProgressIndicator(),
                     ),
-                    CategoryCard(
-                      categoryName: 'Computer',
-                    ),
-                    CategoryCard(
-                      categoryName: 'Computer',
-                    ),
-                    CategoryCard(
-                      categoryName: 'Computer',
-                    ),
-                    CategoryCard(
-                      categoryName: 'Computer',
-                    ),
-                    CategoryCard(
-                      categoryName: 'Computer',
-                    ),
-                  ],
-                ),
-              ),
+                  );
+                }
+                return const SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      CategoryCard(
+                        categoryName: 'Computer',
+                      ),
+                      CategoryCard(
+                        categoryName: 'Computer',
+                      ),
+                      CategoryCard(
+                        categoryName: 'Computer',
+                      ),
+                      CategoryCard(
+                        categoryName: 'Computer',
+                      ),
+                      CategoryCard(
+                        categoryName: 'Computer',
+                      ),
+                      CategoryCard(
+                        categoryName: 'Computer',
+                      ),
+                    ],
+                  ),
+                );
+              }),
               const SizedBox(height: 6),
 
               // popular items
