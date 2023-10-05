@@ -3,16 +3,17 @@ import 'package:demo/data/services/network_caller.dart';
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
-  final bool _getSliderInProgress = false;
+  bool _getSliderInProgress = false;
   HomeSliderModel _homeSliderModel = HomeSliderModel();
 
   HomeSliderModel get homeSliderModel => _homeSliderModel;
   bool get getSliderInProgress => _getSliderInProgress;
 
   Future<bool> getHomeSlider() async {
-    _getSliderInProgress;
+    _getSliderInProgress = true;
     update();
-    final response = await NetworkCaller.getRequest(url: 'ListProductSlider');
+    final response = await NetworkCaller.getRequest(url: '/ListProductSlider');
+    _getSliderInProgress = false;
     if (response.isSuccess) {
       _homeSliderModel = HomeSliderModel.fromJson(response.returndata);
       update();

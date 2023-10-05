@@ -3,6 +3,7 @@ import 'package:demo/ui/screens/authscreens/welcome_screen.dart';
 import 'package:demo/ui/screens/homescreens/profile_screen.dart';
 import 'package:demo/ui/state_management/auth_controller.dart';
 import 'package:demo/ui/state_management/bottom_navbar_controller.dart';
+import 'package:demo/ui/state_management/home_controller.dart';
 import 'package:demo/ui/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -75,7 +76,19 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(height: 10),
 
               // slider
-              CarouselSliderWidget(),
+              GetBuilder<HomeController>(builder: (homeContoller) {
+                if (homeContoller.getSliderInProgress) {
+                  return const SizedBox(
+                    height: 150 ,
+                    child: Center(
+                        child: CircularProgressIndicator(
+                      color: primaryColor,
+                    )),
+                  );
+                } else {
+                  return CarouselSliderWidget(homeSliderModel: homeContoller.homeSliderModel);
+                }
+              }),
               const SizedBox(height: 6),
 
               // categories
